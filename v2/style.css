@@ -141,7 +141,8 @@
   left: 50%;
   top: 50%;
   position: absolute;
-  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  transform: translate(-50%, -50%) scale(1.75);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,9 +155,11 @@
 @keyframes logoAnimation {
   from {
     opacity: 0;
+    transform: translate(-50%, -50%) scale(1.75);
   }
   to {
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
