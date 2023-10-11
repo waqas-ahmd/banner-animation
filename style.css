@@ -1,0 +1,360 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(12deg);
+  height: 200%;
+  width: 200%;
+  object-fit: cover;
+
+  opacity: 0.3;
+  filter: blur(2px);
+}
+
+.banner {
+  width: 100%;
+  aspect-ratio: 2.5;
+  background-color: black;
+  /* background: url("/bg.jpg"); */
+  /* background: url("https://i0.wp.com/tgmodz.com/wp-content/uploads/2023/08/Pattern-min.png?fit=1900%2C250&ssl=1"); */
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  font-family: Montserrat, sans-serif;
+}
+
+.banner-logo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1caddc 0%, #0083b0 100%);
+  border-radius: 100%;
+  cursor: pointer;
+
+  animation: logo 0.5s 2s ease forwards;
+  opacity: 0;
+  box-shadow: 0px 0px 12px #333a;
+}
+
+@keyframes logo {
+  from {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.banner-logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 34%;
+  aspect-ratio: 1;
+  z-index: 20;
+  animation: logocontainer 1.5s 2s ease infinite alternate-reverse;
+}
+
+@keyframes logocontainer {
+  from {
+    transform: translate(-50%, -52%);
+  }
+  to {
+    transform: translate(-50%, -48%);
+  }
+}
+
+.circle-svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.banner-logo:hover img {
+  transform: rotate(360deg);
+}
+
+.banner-logo img {
+  transition: all 0.9s ease-out;
+  height: 70%;
+}
+
+.banner-overlay-1 {
+  height: 125%;
+  width: 125%;
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  z-index: 10;
+  transform-origin: top left;
+  transform: rotate(15deg);
+  animation: overlay1 0.8s 1.6s ease forwards;
+  opacity: 0;
+}
+.banner-overlay-2 {
+  height: 125%;
+  width: 125%;
+  position: absolute;
+  bottom: 50%;
+  left: 49%;
+  z-index: 10;
+  transform-origin: bottom left;
+  transform: rotate(15deg);
+  animation: overlay1 0.8s 1.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes overlay1 {
+  from {
+    opacity: 0;
+    transform: translateX(14%) rotate(15deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%) rotate(15deg);
+  }
+}
+
+.banner-overlay-3 {
+  height: 200%;
+  width: 100%;
+  position: absolute;
+  left: -86%;
+  top: -10%;
+  z-index: 10;
+  transform-origin: center center;
+  transform: rotate(105deg);
+  display: none;
+}
+
+.banner-text {
+  position: absolute;
+  left: 7%;
+  right: 56%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  justify-content: center;
+  color: white;
+}
+
+.banner a {
+  height: 8%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-top: 2.5%;
+  width: 40%;
+  border: none;
+  outline: none;
+  background-color: #0083b0;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  opacity: 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0px;
+  text-decoration: none;
+}
+
+.banner-btn-1 {
+  background: linear-gradient(180deg, #525fec 0%, #3d49ca 100%);
+  animation: buttons 0.7s 1.3s ease forwards;
+}
+.banner-btn-1:hover {
+  background: linear-gradient(180deg, #72329a 0%, #561764 100%);
+}
+.banner-btn-2 {
+  background: linear-gradient(180deg, #20b2e1 0%, #0083b0 100%);
+  animation: buttons 0.7s 1.4s ease forwards;
+}
+.banner-btn-2:hover {
+  background: linear-gradient(180deg, #72329a 0%, #561764 100%);
+}
+
+@keyframes buttons {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.banner-text a svg {
+  width: 12%;
+  margin-right: 4%;
+}
+
+.banner-text .line-1 {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-left: 3%;
+  animation: line1 0.7s 0.6s ease forwards;
+  opacity: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+@keyframes line1 {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.banner-text .line-2,
+.banner-text .line-3 {
+  font-size: 4rem;
+  line-height: 1.5rem;
+  margin: 4% 0%;
+  font-style: italic;
+  font-weight: bold;
+  margin-left: 1%;
+  animation: line2 0.7s 0.9s ease forwards;
+  opacity: 0;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+}
+
+@keyframes line2 {
+  from {
+    opacity: 0;
+    transform: translateX(-10%);
+    letter-spacing: -9px;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+    letter-spacing: 5px;
+  }
+}
+.banner-text .line-4 {
+  font-size: 0.85rem;
+  margin: 2% 0%;
+  width: 75%;
+  letter-spacing: 1.5px;
+  text-shadow: 0px 0px 4px black;
+  line-height: 1.2rem;
+  margin-left: 1%;
+  animation: line4 0.7s 1.1s ease forwards;
+  opacity: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+@keyframes line4 {
+  from {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.banner .payment {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  height: 5%;
+  transform: translateY(80%);
+  text-shadow: 0px 0px 4px black;
+  letter-spacing: 2px;
+  animation: payment 0.7s 1.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes payment {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.banner .payment span {
+  margin: 0px 7px;
+}
+
+.banner .payment img {
+  height: 100%;
+}
+
+.banner-overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: left center;
+  transform: translate(0%, -50%) rotate(12deg);
+  height: 160%;
+  width: 160%;
+}
+
+.banner-overlay svg {
+  height: 100%;
+  transform-origin: 0% 50%;
+}
+.overlay1 svg {
+  transform: translate(0%, -101%);
+  animation: slide2 0.9s 1.5s ease forwards;
+}
+@keyframes slide2 {
+  from {
+    transform: translate(0%, -101%);
+  }
+  to {
+    transform: translate(-0.4%, 0%);
+  }
+}
+.overlay2 svg {
+  transform: translate(100%, 0%);
+  animation: slide1 0.7s 1s ease forwards;
+}
+@keyframes slide1 {
+  from {
+    transform: translate(100%, 0%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+.overlay3 svg {
+  transform: translate(0%, 100%);
+  animation: slide3 0.9s 1.5s ease forwards;
+}
+@keyframes slide3 {
+  from {
+    transform: translate(0%, 100%);
+  }
+  to {
+    transform: translate(0.4%, 0%);
+  }
+}
